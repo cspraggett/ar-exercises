@@ -10,3 +10,12 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "Enter a store name"
+name = gets.chomp
+@s3 = Store.create(name: name)
+
+if @s3.errors.any?
+  @s3.errors.each do |attribute, message|
+    puts attribute, message
+  end
+end
